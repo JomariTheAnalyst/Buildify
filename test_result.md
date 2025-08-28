@@ -130,6 +130,9 @@ backend:
         - working: true
           agent: "main"
           comment: "Gemini AI integrated with model gemini-1.5-flash, API key configured"
+        - working: true
+          agent: "testing"
+          comment: "✅ TESTED: Gemini AI integration working perfectly. Generated valid HTML for both simple and complex prompts. Model gemini-1.5-flash responding correctly with proper HTML structure, semantic elements, and requested features like dark themes and restaurant-specific content."
           
   - task: "Website Generation API"
     implemented: true
@@ -142,6 +145,9 @@ backend:
         - working: true
           agent: "main"
           comment: "POST /api/generate endpoint accepts prompts and returns generated HTML code"
+        - working: true
+          agent: "testing"
+          comment: "✅ TESTED: POST /api/generate endpoint fully functional. Successfully tested with simple prompt ('Create a basic portfolio website') and complex prompt ('Create a modern restaurant website with menu, location, and contact form using dark theme'). Generated HTML contains proper structure (html, head, body, title tags) and requested features. Edge cases handled correctly - empty/null prompts return 400 status with proper error messages. Very long prompts (10k chars) processed successfully."
           
   - task: "ZIP Download API"
     implemented: true
@@ -154,6 +160,9 @@ backend:
         - working: true
           agent: "main"
           comment: "POST /api/download endpoint creates downloadable ZIP with HTML and README"
+        - working: true
+          agent: "testing"
+          comment: "✅ TESTED: POST /api/download endpoint working perfectly. Creates valid ZIP files containing index.html and README.md. ZIP file structure verified - contains generated HTML code and comprehensive README with hosting instructions. Proper HTTP headers set (Content-Type: application/zip, Content-Disposition: attachment). Edge cases handled correctly - empty/null code returns 400 status with error messages."
           
   - task: "MongoDB Integration"
     implemented: true
@@ -166,6 +175,9 @@ backend:
         - working: true
           agent: "main"
           comment: "MongoDB stores generation history and status checks"
+        - working: true
+          agent: "testing"
+          comment: "✅ TESTED: MongoDB integration fully functional. Generations are successfully stored in 'generations' collection with UUID, prompt, code, and timestamp. GET /api/generations endpoint returns stored generations (found 3 generations during testing). Status checks stored in 'status_checks' collection. Database operations working correctly with proper data persistence and retrieval."
 
 frontend:
   - task: "Main UI Interface"

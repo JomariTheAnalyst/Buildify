@@ -236,11 +236,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Full end-to-end testing of website generation"
-    - "Responsive preview functionality"
-    - "Download and ZIP creation"
+    - "Frontend UI testing and integration"
+    - "End-to-end user workflow testing"
   stuck_tasks: []
-  test_all: true
+  test_all: false
   test_priority: "high_first"
 
 agent_communication:
